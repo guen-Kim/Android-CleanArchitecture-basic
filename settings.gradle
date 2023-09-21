@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MVC_basic"
 include ':app'
+include ':mvc_basic'
+include ':mvp_basic'
+include ':mvvm_basic'
+include ':mvi_basic'
