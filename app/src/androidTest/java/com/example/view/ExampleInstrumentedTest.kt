@@ -1,4 +1,4 @@
-package com.example.mvc_basic
+package com.example.view
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
