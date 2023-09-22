@@ -30,8 +30,6 @@ class Database private constructor() {
 
     fun add(person: Person) {
         personList.add(0, person)
-        // DB 데이터가 바뀌었다. 사용자에게 보여지는 데이터도 바껴야한다.
-        // model은 view에 의존하지 않으므로 view에 데이터 전달하는 로직 controller에서 처리 하도록 전가
         notifyChange()
     }
 
@@ -51,6 +49,8 @@ class Database private constructor() {
     }
 
     interface DatabaseListener {
+        // DB 상태변화 콜백함수, DB 데이터가 바뀌었다. 사용자에게 보여지는 데이터도 바껴야한다.
+        // model은 view에 의존하지 않으므로 view에 데이터 전달하는 로직 controller에서 처리 하도록 전가
         fun onChanged()
     }
 
