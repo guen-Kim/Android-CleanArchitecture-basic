@@ -19,7 +19,7 @@ class MainViewModel(private val database: Database) : BaseObservable() {
     fun load() {
         items.clear()
         items.addAll(database.getPersonList())
-        notifyChange()
+        notifyChange() // BaseObservable
     }
 
     fun addPerson(person: Person) {
