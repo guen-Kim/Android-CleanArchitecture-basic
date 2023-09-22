@@ -44,7 +44,7 @@ MVC를 지키면서 코딩하는 방법
 
 
 안드로이드에서 MVC 패턴
-안드로이드에서 View와 Controller의 역할을 Activity, Fragment가 수행하게 되며, Model은 Data Class에 해당한다.
+안드로이드에서 View와 Controller의 역할을 Activity, Fragment가 수행하게 되며, Model은 Data Class에 해당한다. 흔히 '스파게티 코드'라고 불린다.
 ![image](https://github.com/guen-Kim/Android-CleanArchitecture-basic/assets/69742329/ccd90622-de61-49db-a846-bab49b7f8c72)
 
 
@@ -86,10 +86,15 @@ Presenter
 MVP 디자인 패턴의 장단점
 Presenter는 View와 Model의 인스턴스를 가지며 이 둘을 연결해 주는 역할을 하므로 Presenter와 View는 1:1 관계를 갖는다. 이를 바탕으로
 장점
-View와 Model 간의 의존성이 없다.
+View와 Model 간의 의존성이 없다. 그러므로 UI코드 와 비지니스로직을 분리해 유닛 테스트가 수월하다.
 단점
-View와 Presenter 간의 의존성이 높고, 1:1 관계를 융지해야 해서 Presenter를 재사용할 수 없어 View가 늘어날 때마다 Presenter도 같이 늘어나 클래스가 많아지게된다. 또한 앱 기능이 많아질수록 Presenter가 거대해지는 단점이있따.
+View와 Presenter 간의 의존성이 높고, 1:1 관계를 융지해야 해서 Presenter를 재사용할 수 없어 View가 늘어날 때마다 Presenter도 같이 늘어나 클래스가 많아지게된다. 또한 앱 기능이 많아질수록 Presenter가 거대해지는 단점이있다.
 
+
+
+
+
+3. MVVM 디자인 패턴
 
 
 
