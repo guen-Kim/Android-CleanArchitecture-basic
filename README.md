@@ -4,7 +4,8 @@
 - 가장 기초적인 Android Architecture Pattern 부터 모던 안드로이드 패턴까지 간단한 프로젝트를 진행하면서 정리하고자 합니다.
 이를 바탕으로 스파게티 코드로 작성했었던 기존의 프로젝트를 수정하려 합니다. (기초탄탄)
 
-안드로이드 애플리케이션 설계 패턴 
+안드로이드 애플리케이션 설계 패턴
+
 1. MVC 디자인 패턴
 
 구성요소
@@ -50,4 +51,48 @@ MVC를 지키면서 코딩하는 방법
 MVC패턴의 의존성 및 단점
 - Controller는 View와 Model에 의존적이고 View는 Model에 의존적이라 결합도가 높다.
 - Activity 나 Fragment에 거의 모든 로직이 작성되는 경향이 있다. 그러므로 큰 프로젝트에 사용되는 코드로 적합하지 않다.
+
+
+
+2. MVP 디자인 패턴
+Model과 View의 역할은 MVC 디자인 패턴과 동일하다. Controller 대신 Presenter이라는 개념을 통해 UI(View)와 비즈니스 로직(Model)을 분리하여 영향(의존성)을 최소화하는 것에 있다.
+
+![image](https://github.com/guen-Kim/Android-CleanArchitecture-basic/assets/69742329/42f85fe7-4197-47b0-8791-c42d2b834eec)
+
+
+Model
+- 프로그램 내부적으로 쓰이는 데이터를 저장하고, 처리한다. (비지니스 로직)
+- View or Presenter등 다른 어떤 요소에도 의존적이지 않은 독립적이다.
+
+
+View
+- 공통적으로 화면에 데이터를 출력하는 역할, 안드로이드 에서는 Activity, Fragment, holer 등
+- Model에서 처리된 데이터를 Presenter를 통해 받아서 유저에게 보여준다.
+- 유저 액션(Action) 및 액티비티 라이프사이클 상태 변경을 주시하며 Presenter에 보내는 역할을 한다.
+- Contract interface에 정의된 view의 기능을 구현한다.
+- Presenter를 통해 데이터를 주고받기 때문에 Model에 매우 의존적이다.
+
+Presenter
+- Model과 View사이의 매개체이며 이 두 Component를 이용해 Contract interface에 정의된 Presenter의 기능을 구현한다. 
+- Controller와 유사하지만, View를 직접 참조하지 않고 View interface를 구현한 Concrete Class와 상호작용한다.
+- 뷰에게 표시할 내용(Data)만 전달하고 어떻게 보여줄지는 View가 한다.
+
+
++ Contract interface
+- MVP 패턴에서 사용될 API를 정의한다.
+- MVP 패턴에서 역할을 구분하고 책임을 명확히 나타낸다.
+- 대게 View interface와 Presenter interface가 정의되며 MVP 패턴 설계될 class는 이  역할에 따라interface를 구현해 사용하면된다.
+
+MVP 디자인 패턴의 장단점
+Presenter는 View와 Model의 인스턴스를 가지며 이 둘을 연결해 주는 역할을 하므로 Presenter와 View는 1:1 관계를 갖는다. 이를 바탕으로
+장점
+View와 Model 간의 의존성이 없다.
+단점
+View와 Presenter 간의 의존성이 높고, 1:1 관계를 융지해야 해서 Presenter를 재사용할 수 없어 View가 늘어날 때마다 Presenter도 같이 늘어나 클래스가 많아지게된다. 또한 앱 기능이 많아질수록 Presenter가 거대해지는 단점이있따.
+
+
+
+
+
+
   
