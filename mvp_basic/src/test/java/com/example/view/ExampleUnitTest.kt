@@ -1,4 +1,4 @@
-package com.example.mvp_basic
+package com.example.view
 
 import org.junit.Test
 
