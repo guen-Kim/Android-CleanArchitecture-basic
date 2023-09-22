@@ -1,4 +1,4 @@
-package com.example.mvvm_basic
+package com.example.model
 
 import org.junit.Test
 
