@@ -35,7 +35,6 @@ class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     interface HolderClickListener {
         fun onDeleteClick(person: Person?)
+
     }
-
-
 }
