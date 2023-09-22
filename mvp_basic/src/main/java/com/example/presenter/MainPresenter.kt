@@ -4,7 +4,8 @@ import com.example.MainContract
 import com.example.model.Database
 import com.example.model.Person
 
-class MainPresenter(private val database: Database, private val view: MainContract.View) : MainContract.Presenter {
+class MainPresenter(private val database: Database, private val view: MainContract.View) :
+    MainContract.Presenter {
 
     init {
         database.setOnDatabaseListener(object : Database.DatabaseListener {
